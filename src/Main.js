@@ -5,12 +5,13 @@ import {
   Text,
   View,
   StyleSheet,
+  Button,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import GoogleSignInView from './GoogleSignInView';
 import FireStoreView from './FireStoreView';
 
-const Main = () => {
+const Main = ({navigation}) => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
 
@@ -45,8 +46,16 @@ const Main = () => {
 
   return (
     <SafeAreaView style={styles.container_center}>
+      <Text>login success!!</Text>
       <Text>{user.email}</Text>
-      <FireStoreView />
+      <Button
+        title="정보 입력하기"
+        onPress={() => navigation.navigate('InputView')}
+      />
+      <Button
+        title="정보 조회하기"
+        onPress={() => navigation.navigate('ReadView')}
+      />
     </SafeAreaView>
   );
 };
