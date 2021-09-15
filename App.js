@@ -9,6 +9,7 @@ import {
 import auth from '@react-native-firebase/auth';
 import GoogleSignInView from './src/GoogleSignInView';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import FireStoreView from './src/FireStoreView';
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
@@ -43,9 +44,12 @@ const App = () => {
     );
   }
 
+  console.log('user in App.js, ', user);
+
   return (
     <SafeAreaView style={styles.container_center}>
       <Text>{user.email}</Text>
+      <FireStoreView />
     </SafeAreaView>
   );
 };
