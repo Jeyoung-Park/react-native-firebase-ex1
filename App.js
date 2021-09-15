@@ -7,13 +7,15 @@ import {
   StyleSheet,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import GoogleSignInView from './src/GoogleSignInView';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
-  const [user, setUSer] = useState();
+  const [user, setUser] = useState();
 
   const onAuthStateChanged = user => {
-    setUSer(user);
+    setUser(user);
     if (initializing) {
       setInitializing(false);
     }
@@ -36,6 +38,7 @@ const App = () => {
     return (
       <SafeAreaView style={styles.container_center}>
         <Text>Login</Text>
+        <GoogleSignInView />
       </SafeAreaView>
     );
   }
@@ -50,5 +53,10 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container_center: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+  container_center: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
 });
