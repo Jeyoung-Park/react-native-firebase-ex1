@@ -1196,6 +1196,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-12.8.0.tgz#d470a90dbb43b9121e44432fedb9fc8ad8c90778"
   integrity sha512-ekI/qyl6/hAmFZJhGx8A4NwrJzFmhMPHDJYCzmDy2CJzbMBFJRmebTBsvVh/DIB+M1X2idQwqx1iz4kkF8CssQ==
 
+"@react-native-firebase/ml@^12.8.0":
+  version "12.8.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/ml/-/ml-12.8.0.tgz#f2f56b83a7796cbdc3d4fd5cfb15d5d6cc79c077"
+  integrity sha512-6Eu8rui4JFojLxl4GXXQc2U6CCNMVYLelg5jaJJTMjkXMtXFIx0MP79H5SEA39aDI+NggaGrzNB+8u/EEyxpuQ==
+
 "@react-native-google-signin/google-signin@^7.0.0-alpha.3":
   version "7.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@react-native-google-signin/google-signin/-/google-signin-7.0.0-alpha.3.tgz#678f4bb0d69d1023e936ee2e9aadeda637c169fd"
@@ -5428,6 +5433,11 @@ react-native-image-picker@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-4.0.6.tgz#0dfa5bb83bcf6ff58635ebb9201a185c2271e8cc"
   integrity sha512-Pp3UWKUADuMG1mz12m6dSO/R2KnvXVEd77bldrfTMFpz4PFc4iVKo+bHeS79It0mUBezfzDMgfesg/OPLSugvQ==
+
+react-native-mlkit-ocr@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-mlkit-ocr/-/react-native-mlkit-ocr-0.2.3.tgz#2d6af84288ab9a79245c8f47e41d034ca8e4b085"
+  integrity sha512-cMsqR3xzLlDS9l/w4HHOiY9es14LGG2voIAOtl2JcUlB0kcSLYXKRJ2JohtQgVZE9DU/zMK/B2WIh7UDb38dRw==
 
 react-native-safe-area-context@^3.3.2:
   version "3.3.2"
