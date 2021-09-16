@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Main from './src/Main';
 import InputView from './src/InputVIew';
 import ReadView from './src/ReadView';
+import TextRecognitionView from './src/TextRecognitionVIew';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ const App = ({params}) => (
       <Stack.Screen name="Main" component={Main} />
       <Stack.Screen name="InputView" component={InputView} />
       <Stack.Screen name="ReadView" component={ReadView} />
+      <Stack.Screen name="TextRecognitionView" component={TextRecognitionView} />
     </Stack.Navigator>
   </NavigationContainer>
 );

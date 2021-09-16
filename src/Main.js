@@ -56,6 +56,10 @@ const Main = ({navigation}) => {
         title="정보 조회하기"
         onPress={() => navigation.navigate('ReadView')}
       />
+      <Button
+        title="텍스트 인식 페이지 가기"
+        onPress={() => navigation.navigate('TextRecognitionView')}
+      />
     </SafeAreaView>
   );
 };
