@@ -5,14 +5,12 @@ import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 
 
-export default function GoogleSignInView() {
+export default function GoogleSignInView({
+  login,
+  setLogin,
+}) {
   async function onGoogleButtonPress() {
     console.log('onGoogleButtonPress Clicked');
-
-    GoogleSignin.configure({
-      webClientId:
-        '802676014569-shlbu3foi2cqmcf6aib61uhj9add1mcr.apps.googleusercontent.com',
-    });
 
     // Get the users ID token
     const {idToken} = await GoogleSignin.signIn();
@@ -29,7 +27,9 @@ export default function GoogleSignInView() {
     <Button
       title="Google Sign-In"
       onPress={() =>
-        onGoogleButtonPress().then(() => console.log('Signed in with Google!'))
+        onGoogleButtonPress().then(() => {
+          setLogin(true);
+        })
       }
     />
   );

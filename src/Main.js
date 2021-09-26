@@ -10,12 +10,20 @@ import {
 import auth from '@react-native-firebase/auth';
 import GoogleSignInView from './GoogleSignInView';
 import FireStoreView from './FireStoreView';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+
+GoogleSignin.configure({
+  webClientId:
+    '802676014569-shlbu3foi2cqmcf6aib61uhj9add1mcr.apps.googleusercontent.com',
+});
 
 const Main = ({navigation}) => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
+  const [login, setLogin]=useState(false);
 
   const onAuthStateChanged = user => {
+    console.log('onAuthStateChanged');
     setUser(user);
     if (initializing) {
       setInitializing(false);
@@ -35,17 +43,29 @@ const Main = ({navigation}) => {
     );
   }
 
-  if (!user) {
+  if (!user||!login) {
     return (
       <SafeAreaView style={styles.container_center}>
         <Text>Login</Text>
-        <GoogleSignInView />
+        <GoogleSignInView login={login} setLogin={(param)=>{setLogin(param)}}/>
       </SafeAreaView>
     );
   }
 
+  console.log('user, ', user);
+
   return (
     <SafeAreaView style={styles.container_center}>
+      <Button 
+        title="로그아웃"
+        onPress={()=>{
+          GoogleSignin.signOut().then(()=>{
+            setUser(null);
+            setLogin(false);
+            console.warn('로그아웃 성공');
+          })
+        }}
+      />
       <Text>login success!!</Text>
       <Text>{user.email}</Text>
       <Button
